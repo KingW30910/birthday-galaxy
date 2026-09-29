@@ -434,16 +434,15 @@
     </h1>
 
     <div class="reveal-date-wrap">
-      <span class="reveal-date-line"></span>
-
-      <div id="revealDate" class="reveal-date">
-        20 THÁNG 10
-      </div>
 
       <span class="reveal-date-line"></span>
+
+      <div id="revealDate" class="reveal-date"></div>
+
+      <span class="reveal-date-line"></span>
+
     </div>
 
-    <!-- HÌNH ẢNH HUBBLE -->
     <div class="reveal-image-frame">
 
       <div class="reveal-image-glow"></div>
@@ -456,28 +455,21 @@
 
     </div>
 
-    <!-- THÔNG TIN THIÊN VĂN -->
     <div class="reveal-info">
 
       <p class="reveal-label">
         ĐIỂM NHÌN TỪ HUBBLE
       </p>
 
-      <h2 id="revealObject">
-        30 Doradus
-      </h2>
+      <h2 id="revealObject"></h2>
 
-      <p id="revealScience">
-        Một vùng hình thành sao khổng lồ trong Đám Mây Magellan Lớn.
-      </p>
+      <p id="revealScience"></p>
 
-      <p id="revealCredit" class="reveal-credit">
-        Ảnh: NASA / ESA / Hubble
-      </p>
+      <p id="revealCredit" class="reveal-credit"></p>
 
     </div>
 
-    <!-- LỜI CHÚC — CHƯA HIỂN THỊ -->
+    <!-- SẼ DÙNG SAU KHI CÓ LỜI CHÚC -->
     <div
       id="revealWishSection"
       class="reveal-wish"
@@ -493,6 +485,7 @@
     </div>
 
     <div class="reveal-footer">
+
       <p>
         Thêm một vòng quanh Mặt Trời.
       </p>
@@ -500,6 +493,7 @@
       <p>
         Và thêm một câu chuyện để kể.
       </p>
+
     </div>
 
     <button
@@ -516,7 +510,22 @@
   <!-- =====================================================
        JAVASCRIPT
   ====================================================== -->
+<div id="revealTransition" class="reveal-transition">
 
+  <div class="transition-glow"></div>
+
+  <div class="transition-ring transition-ring-one"></div>
+  <div class="transition-ring transition-ring-two"></div>
+
+  <div class="transition-star">
+    ✦
+  </div>
+
+  <p class="transition-text">
+    Đang giải mã tín hiệu...
+  </p>
+
+</div>
   <script src="game.js"></script>
 
 </body>
