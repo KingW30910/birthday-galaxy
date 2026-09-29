@@ -169,6 +169,8 @@ const STAR_DATA = {
       "Một trong những vùng hình thành sao nổi bật nhất trong vùng lân cận của chúng ta. Hàng loạt ngôi sao trẻ, nóng và khối lượng lớn đang hình thành giữa những đám mây khí và bụi khổng lồ.",
     distance:
       "Khoảng 160.000 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-20.jpg",
     credit:
       "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
