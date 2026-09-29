@@ -483,45 +483,32 @@ continueToCharacter.addEventListener("click", function() {
 const characterStatus =
   document.getElementById("characterStatus");
 
-
 characterButtons.forEach(function(button) {
 
   button.addEventListener("click", function() {
 
-    // Bỏ trạng thái chọn cũ
     characterButtons.forEach(function(item) {
-
       item.classList.remove("selected");
-
     });
 
-
-    // Đánh dấu nhân vật đang được chọn
     button.classList.add("selected");
 
-
-    // Lưu nhân vật
     player.character =
       button.dataset.character;
 
-
-    // Cho phép vào vũ trụ
     enterGalaxyButton.disabled =
       false;
 
-
-    // Cập nhật thông báo
     if (characterStatus) {
-
       characterStatus.textContent =
         "Đã chọn người bạn đồng hành · " +
         player.character;
-
     }
 
   });
 
 });
+
 // ===============================
 // VÀO VŨ TRỤ
 // ===============================
