@@ -1239,5 +1239,4 @@ function showReveal(date) {
 restartButton.addEventListener("click", function() {
 
   window.location.reload();
-
 });
