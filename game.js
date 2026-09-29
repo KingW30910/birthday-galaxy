@@ -481,34 +481,52 @@ continueToCharacter.addEventListener("click", function() {
 // CHỌN NHÂN VẬT
 // ===============================
 
+// ===============================
+// CHỌN NHÂN VẬT
+// ===============================
+
+const characterStatus =
+  document.getElementById("characterStatus");
+
+
 characterButtons.forEach(function(button) {
 
   button.addEventListener("click", function() {
-
 
     // Bỏ trạng thái chọn cũ
-
-    const characterStatus = document.getElementById("characterStatus");
-
-characterButtons.forEach(function(button) {
-  button.addEventListener("click", function() {
-
     characterButtons.forEach(function(item) {
+
       item.classList.remove("selected");
+
     });
 
+
+    // Đánh dấu nhân vật đang được chọn
     button.classList.add("selected");
 
-    player.character = button.dataset.character;
 
-    enterGalaxyButton.disabled = false;
+    // Lưu nhân vật
+    player.character =
+      button.dataset.character;
 
-    characterStatus.textContent =
-      "Đã chọn người bạn đồng hành · " + player.character;
+
+    // Cho phép vào vũ trụ
+    enterGalaxyButton.disabled =
+      false;
+
+
+    // Cập nhật thông báo
+    if (characterStatus) {
+
+      characterStatus.textContent =
+        "Đã chọn người bạn đồng hành · " +
+        player.character;
+
+    }
+
   });
+
 });
-
-
 // ===============================
 // VÀO VŨ TRỤ
 // ===============================
