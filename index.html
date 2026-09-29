@@ -1,1 +1,269 @@
+```html
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
 
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Vũ trụ sinh nhật</title>
+
+  <meta
+    name="description"
+    content="Another Year Around the Sun — Vũ trụ sinh nhật"
+  >
+
+  <!-- Kết nối với file CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MÀN HÌNH 1 — MỞ ĐẦU
+  ====================================================== -->
+
+  <section id="introScreen" class="screen active">
+
+    <div class="intro-content">
+
+      <div class="eyebrow">
+        ANOTHER YEAR AROUND THE SUN
+      </div>
+
+      <h1 class="intro-title">
+        VŨ TRỤ<br>
+        SINH NHẬT
+      </h1>
+
+      <p class="intro-subtitle">
+        15 hành trình.<br>
+        12 điểm thời gian.<br>
+        Và một điểm sáng đang chờ bạn tìm thấy.
+      </p>
+
+      <button
+        id="startButton"
+        class="primary-btn"
+        type="button"
+      >
+        BƯỚC VÀO VŨ TRỤ
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MÀN HÌNH 2 — NHẬP THÔNG TIN
+  ====================================================== -->
+
+  <section id="formScreen" class="screen form-screen">
+
+    <div class="form-card">
+
+      <div class="eyebrow">
+        HÀNH TRÌNH CỦA BẠN
+      </div>
+
+      <h2>
+        Trước khi bắt đầu...
+      </h2>
+
+      <p>
+        Hãy để vũ trụ biết bạn là ai.
+        Thông tin này sẽ giúp bạn tìm đúng
+        điểm sáng của mình.
+      </p>
+
+
+      <!-- Tên -->
+
+      <div class="form-group">
+
+        <label for="playerName">
+          Tên của bạn
+        </label>
+
+        <input
+          id="playerName"
+          type="text"
+          placeholder="Nhập tên của bạn"
+          autocomplete="name"
+        >
+
+      </div>
+
+
+      <!-- Ngày sinh -->
+
+      <div class="form-group">
+
+        <label for="playerBirthday">
+          Ngày sinh của bạn
+        </label>
+
+        <input
+          id="playerBirthday"
+          type="date"
+        >
+
+      </div>
+
+
+      <button
+        id="continueToCharacter"
+        class="primary-btn"
+        type="button"
+      >
+        TIẾP TỤC HÀNH TRÌNH
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MÀN HÌNH 3 — CHỌN NHÂN VẬT
+  ====================================================== -->
+
+  <section
+    id="characterScreen"
+    class="screen character-screen"
+  >
+
+    <div class="character-container">
+
+      <div class="eyebrow">
+        NGƯỜI BẠN ĐỒNG HÀNH
+      </div>
+
+      <h2>
+        Hôm nay, bạn sẽ du hành cùng ai?
+      </h2>
+
+      <p>
+        Chọn một nhân vật để bắt đầu hành trình.
+      </p>
+
+
+      <div
+        id="characterGrid"
+        class="character-grid"
+      >
+
+        <!--
+          Các nhân vật hiện tại chỉ là placeholder.
+          Sau này chúng ta sẽ thay bằng
+          hình minh họa riêng.
+        -->
+
+        <button
+          class="character"
+          data-character="01"
+          type="button"
+          aria-label="Nhân vật 1"
+        >
+          ◇
+        </button>
+
+        <button
+          class="character"
+          data-character="02"
+          type="button"
+          aria-label="Nhân vật 2"
+        >
+          ✦
+        </button>
+
+        <button
+          class="character"
+          data-character="03"
+          type="button"
+          aria-label="Nhân vật 3"
+        >
+          ◈
+        </button>
+
+        <button
+          class="character"
+          data-character="04"
+          type="button"
+          aria-label="Nhân vật 4"
+        >
+          ✧
+        </button>
+
+        <button
+          class="character"
+          data-character="05"
+          type="button"
+          aria-label="Nhân vật 5"
+        >
+          ☆
+        </button>
+
+        <button
+          class="character"
+          data-character="06"
+          type="button"
+          aria-label="Nhân vật 6"
+        >
+          ✶
+        </button>
+
+        <button
+          class="character"
+          data-character="07"
+          type="button"
+          aria-label="Nhân vật 7"
+        >
+          ✹
+        </button>
+
+        <button
+          class="character"
+          data-character="08"
+          type="button"
+          aria-label="Nhân vật 8"
+        >
+          ✺
+        </button>
+
+      </div>
+
+
+      <br>
+
+      <button
+        id="enterGalaxy"
+        class="primary-btn"
+        type="button"
+        disabled
+      >
+        BƯỚC VÀO VŨ TRỤ
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MÀN HÌNH 4 — GALAXY GAME
+  ====================================================== -->
+
+  <section id="gameScreen" class="screen">
+
+    <div class="game-world">
+
+      <!-- Dải Ngân Hà -->
+
+      <div class="milky-way"></div>
+
+```
