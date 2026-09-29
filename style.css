@@ -538,3 +538,32 @@ button {
     padding: 28px;
   }
 }
+/* ===============================
+   NGÀY SINH - CHỈ NGÀY / THÁNG
+   =============================== */
+
+.birthday-select {
+  display: flex;
+  gap: 12px;
+  width: 100%;
+}
+
+.birthday-select select {
+  flex: 1;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  font-size: 15px;
+  outline: none;
+}
+
+.birthday-select select:focus {
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.birthday-select option {
+  color: #111;
+  background: white;
+}
