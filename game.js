@@ -138,47 +138,6 @@ const revealMessage = document.getElementById("revealMessage");
 
 const restartButton = document.getElementById("restartButton");
 
-// ===============================
-// TẠO DANH SÁCH NGÀY / THÁNG
-// ===============================
-
-for (let day = 1; day <= 31; day++) {
-
-  const option = document.createElement("option");
-
-  option.value = String(day).padStart(2, "0");
-  option.textContent = day;
-
-  birthDayInput.appendChild(option);
-}
-
-
-const months = [
-  { value: "01", text: "Tháng 1" },
-  { value: "02", text: "Tháng 2" },
-  { value: "03", text: "Tháng 3" },
-  { value: "04", text: "Tháng 4" },
-  { value: "05", text: "Tháng 5" },
-  { value: "06", text: "Tháng 6" },
-  { value: "07", text: "Tháng 7" },
-  { value: "08", text: "Tháng 8" },
-  { value: "09", text: "Tháng 9" },
-  { value: "10", text: "Tháng 10" },
-  { value: "11", text: "Tháng 11" },
-  { value: "12", text: "Tháng 12" }
-];
-
-
-months.forEach(function(month) {
-
-  const option = document.createElement("option");
-
-  option.value = month.value;
-  option.textContent = month.text;
-
-  birthMonthInput.appendChild(option);
-
-});
 
 // ===============================
 // CHUYỂN MÀN HÌNH
@@ -239,16 +198,30 @@ startButton.addEventListener("click", function() {
 
 continueToCharacter.addEventListener("click", function() {
 
-const code = normalizeCode(playerNameInput.value);
+  const code = normalizeCode(playerNameInput.value);
 
-const day = birthDayInput.value;
-const month = birthMonthInput.value;
+  const day = String(birthDayInput.value).padStart(2, "0");
+  const month = String(birthMonthInput.value).padStart(2, "0");
 
-const date = day && month
-  ? day + "/" + month
-  : "";
-  if (!code || !date) {
-    alert("Vui lòng nhập đầy đủ mã ký hiệu và ngày sinh.");
+  const date = day && month
+    ? day + "/" + month
+    : "";
+
+  if (!code || !birthDayInput.value || !birthMonthInput.value) {
+    alert("Vui lòng nhập đầy đủ mã ký hiệu, ngày và tháng sinh.");
+    return;
+  }
+
+  const dayNumber = Number(birthDayInput.value);
+  const monthNumber = Number(birthMonthInput.value);
+
+  if (
+    dayNumber < 1 ||
+    dayNumber > 31 ||
+    monthNumber < 1 ||
+    monthNumber > 12
+  ) {
+    alert("Ngày hoặc tháng chưa hợp lệ. Vui lòng kiểm tra lại.");
     return;
   }
 
@@ -257,7 +230,9 @@ const date = day && month
   });
 
   if (!member) {
-    alert("Thông tin chưa khớp với danh sách hành trình. Bạn hãy kiểm tra lại mã ký hiệu và ngày sinh.");
+    alert(
+      "Thông tin chưa khớp với danh sách hành trình. Bạn hãy kiểm tra lại mã ký hiệu và ngày sinh."
+    );
     return;
   }
 
