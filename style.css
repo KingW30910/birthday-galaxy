@@ -1,0 +1,540 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, sans-serif;
+  background: #02040d;
+  color: white;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+.screen {
+  width: 100%;
+  height: 100vh;
+  display: none;
+  position: relative;
+}
+
+.screen.active {
+  display: flex;
+}
+
+/* =========================
+   MÀN HÌNH MỞ ĐẦU
+========================= */
+
+#introScreen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  background:
+    radial-gradient(circle at 50% 45%, rgba(77, 88, 180, 0.28), transparent 30%),
+    radial-gradient(circle at 20% 20%, rgba(100, 50, 180, 0.2), transparent 25%),
+    radial-gradient(circle at 80% 70%, rgba(30, 120, 180, 0.18), transparent 25%),
+    #02040d;
+}
+
+.intro-content {
+  position: relative;
+  z-index: 5;
+  max-width: 800px;
+  padding: 30px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 22px;
+}
+
+.intro-title {
+  font-size: clamp(42px, 7vw, 88px);
+  letter-spacing: 3px;
+  font-weight: 300;
+  margin-bottom: 20px;
+}
+
+.intro-subtitle {
+  font-size: clamp(16px, 2vw, 22px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+}
+
+.primary-btn {
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  padding: 14px 28px;
+  border-radius: 999px;
+  transition: 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.primary-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+}
+
+/* =========================
+   SAO NỀN
+========================= */
+
+.space-star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.7;
+  animation: twinkle 3s infinite ease-in-out;
+}
+
+@keyframes twinkle {
+  0%, 100% {
+    opacity: 0.25;
+    transform: scale(0.8);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+/* =========================
+   FORM NGƯỜI CHƠI
+========================= */
+
+.form-screen {
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at center, rgba(71, 71, 145, 0.3), transparent 40%),
+    #030510;
+}
+
+.form-card {
+  width: min(90%, 480px);
+  padding: 40px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 24px;
+  background: rgba(10, 13, 35, 0.75);
+  backdrop-filter: blur(18px);
+}
+
+.form-card h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.form-card p {
+  color: rgba(255,255,255,0.65);
+  line-height: 1.6;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: rgba(255,255,255,0.75);
+}
+
+.form-group input {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.06);
+  color: white;
+  outline: none;
+}
+
+.form-group input:focus {
+  border-color: rgba(160,180,255,0.7);
+}
+
+/* =========================
+   CHỌN NHÂN VẬT
+========================= */
+
+.character-screen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background:
+    radial-gradient(circle at center, rgba(50, 80, 170, 0.28), transparent 45%),
+    #030510;
+}
+
+.character-container {
+  width: min(900px, 92%);
+}
+
+.character-container h2 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.character-container p {
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 35px;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.character {
+  aspect-ratio: 1;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 20px;
+  background: rgba(255,255,255,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+  transition: 0.25s ease;
+}
+
+.character:hover {
+  transform: translateY(-5px);
+  background: rgba(255,255,255,0.12);
+}
+
+.character.selected {
+  border-color: rgba(180,200,255,0.9);
+  box-shadow: 0 0 25px rgba(120,150,255,0.35);
+}
+
+/* =========================
+   GAME
+========================= */
+
+#gameScreen {
+  overflow: hidden;
+
+  background:
+    radial-gradient(ellipse at 50% 50%, rgba(83, 66, 155, 0.3), transparent 40%),
+    radial-gradient(ellipse at 20% 80%, rgba(30, 100, 150, 0.2), transparent 35%),
+    #01030b;
+}
+
+.game-world {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+/* Dải ngân hà */
+
+.milky-way {
+  position: absolute;
+  width: 150%;
+  height: 30%;
+  left: -25%;
+  top: 35%;
+  transform: rotate(-18deg);
+
+  background:
+    radial-gradient(
+      ellipse,
+      rgba(255,255,255,0.17) 0%,
+      rgba(150,170,255,0.12) 25%,
+      rgba(100,90,180,0.06) 50%,
+      transparent 72%
+    );
+
+  filter: blur(18px);
+  opacity: 0.8;
+}
+
+/* Earth */
+
+.earth {
+  position: absolute;
+  left: 8%;
+  bottom: 10%;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle at 35% 30%,
+      #d8f4ff 0%,
+      #3e91cf 28%,
+      #174e91 55%,
+      #07152e 100%
+    );
+
+  box-shadow:
+    0 0 25px rgba(80,160,255,0.4),
+    0 0 70px rgba(50,100,255,0.2);
+
+  animation: earthFloat 5s ease-in-out infinite;
+}
+
+@keyframes earthFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Birthday stars */
+
+.birthday-star {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+  transition: 0.3s ease;
+}
+
+.birthday-star::before,
+.birthday-star::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  clip-path: polygon(
+    50% 0%,
+    61% 38%,
+    100% 50%,
+    61% 62%,
+    50% 100%,
+    39% 62%,
+    0% 50%,
+    39% 38%
+  );
+}
+
+.birthday-star::after {
+  transform: rotate(45deg);
+  opacity: 0.35;
+}
+
+.birthday-star:hover {
+  transform: translate(-50%, -50%) scale(1.7);
+  filter: drop-shadow(0 0 15px white);
+}
+
+.star-blue::before {
+  background: #9ed9ff;
+}
+
+.star-purple::before {
+  background: #c9a7ff;
+}
+
+.star-gold::before {
+  background: #ffe29a;
+}
+
+.star-cyan::before {
+  background: #9affef;
+}
+
+/* Người chơi */
+
+.player {
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 2px solid white;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(5px);
+
+  z-index: 20;
+  transition: left 0.08s linear, top 0.08s linear;
+}
+
+/* HUD */
+
+.game-hud {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  right: 25px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 50;
+}
+
+.hud-title {
+  font-size: 14px;
+  letter-spacing: 2px;
+  opacity: 0.7;
+}
+
+.hud-name {
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  font-size: 13px;
+}
+
+/* =========================
+   MODAL
+========================= */
+
+.modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  z-index: 100;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal {
+  width: min(90%, 520px);
+  padding: 38px;
+
+  background: rgba(9,12,30,0.92);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 24px;
+
+  text-align: center;
+}
+
+.modal h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.modal p {
+  color: rgba(255,255,255,0.7);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+/* =========================
+   REVEAL
+========================= */
+
+.reveal-screen {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  background:
+    radial-gradient(circle at center, rgba(90,70,180,0.4), transparent 50%),
+    #02030a;
+}
+
+.reveal-content {
+  width: min(900px, 90%);
+}
+
+.reveal-content h1 {
+  font-size: clamp(35px, 6vw, 70px);
+  font-weight: 300;
+  margin-bottom: 15px;
+}
+
+.reveal-content .date {
+  font-size: 20px;
+  letter-spacing: 4px;
+  opacity: 0.65;
+  margin-bottom: 25px;
+}
+
+.reveal-content .message {
+  max-width: 650px;
+  margin: auto;
+  font-size: 18px;
+  line-height: 1.8;
+  color: rgba(255,255,255,0.75);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+  .character-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  .character {
+    border-radius: 14px;
+    font-size: 34px;
+  }
+
+  .earth {
+    width: 80px;
+    height: 80px;
+  }
+
+  .game-hud {
+    top: 15px;
+    left: 15px;
+    right: 15px;
+  }
+
+  .intro-title {
+    letter-spacing: 1px;
+  }
+
+  .form-card {
+    padding: 28px;
+  }
+}
