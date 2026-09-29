@@ -118,8 +118,8 @@ const continueToCharacter = document.getElementById("continueToCharacter");
 const enterGalaxyButton = document.getElementById("enterGalaxy");
 
 const playerNameInput = document.getElementById("playerName");
-const playerBirthdayInput = document.getElementById("playerBirthday");
-
+const birthDayInput = document.getElementById("birthDay");
+const birthMonthInput = document.getElementById("birthMonth");
 const hudPlayerName = document.getElementById("hudPlayerName");
 
 const characterButtons = document.querySelectorAll(".character-option");
