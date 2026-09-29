@@ -154,63 +154,516 @@
 
   <section id="characterScreen" class="screen character-screen">
 
+  <div class="character-space-glow"></div>
+
   <div class="character-content">
 
-    <p class="eyebrow">BƯỚC TIẾP THEO</p>
+    <div class="character-heading">
+      <p class="character-eyebrow">BƯỚC TIẾP THEO</p>
 
-    <h1>Chọn người bạn đồng hành</h1>
+      <h1>Chọn người bạn đồng hành</h1>
 
-    <p class="character-description">
-      Mỗi hành trình trong vũ trụ đều có một người bạn đồng hành.
-      Hãy chọn một biểu tượng cho chuyến khám phá của bạn.
-    </p>
+      <p class="character-description">
+        Mỗi chuyến khám phá đều bắt đầu bằng một lựa chọn.
+        Hãy chọn một biểu tượng cho hành trình của bạn.
+      </p>
+    </div>
+
 
     <div class="character-grid">
 
-      <button class="character-option" data-character="01">
-        <span class="character-icon">✦</span>
-        <span>01</span>
+
+      <!-- NHÂN VẬT 01 -->
+      <button class="character-option" data-character="01" type="button">
+
+        <span class="character-number">01</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <!-- glow -->
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <!-- body -->
+            <rect x="50" y="88" width="60" height="68" rx="24"
+                  class="astronaut-body"></rect>
+
+            <!-- backpack -->
+            <rect x="42" y="96" width="13" height="45" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <!-- helmet -->
+            <circle cx="80" cy="66" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <!-- visor -->
+            <ellipse cx="80" cy="67" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <!-- reflection -->
+            <ellipse cx="72" cy="60" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <!-- left arm -->
+            <rect x="39" y="101" width="17" height="42" rx="8"
+                  transform="rotate(12 39 101)"
+                  class="astronaut-limb"></rect>
+
+            <!-- right arm -->
+            <rect x="104" y="101" width="17" height="42" rx="8"
+                  transform="rotate(-12 104 101)"
+                  class="astronaut-limb"></rect>
+
+            <!-- belt -->
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- chest panel -->
+            <rect x="67" y="103" width="26" height="15" rx="4"
+                  class="astronaut-panel"></rect>
+
+            <circle cx="73" cy="110" r="2"
+                    class="panel-light"></circle>
+
+            <circle cx="81" cy="110" r="2"
+                    class="panel-light"></circle>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">01</span>
+
       </button>
 
-      <button class="character-option" data-character="02">
-        <span class="character-icon">✧</span>
-        <span>02</span>
+
+
+      <!-- NHÂN VẬT 02 -->
+      <button class="character-option" data-character="02" type="button">
+
+        <span class="character-number">02</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <rect x="51" y="89" width="58" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="97" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <!-- arm holding tablet -->
+            <rect x="104" y="98" width="16" height="45" rx="8"
+                  transform="rotate(-28 104 98)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="34" y="105" width="17" height="40" rx="8"
+                  transform="rotate(22 34 105)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- tablet -->
+            <rect x="103" y="125" width="27" height="36" rx="4"
+                  transform="rotate(-8 103 125)"
+                  class="astronaut-panel"></rect>
+
+            <line x1="109" y1="135" x2="124" y2="133"
+                  class="tablet-line"></line>
+
+            <line x1="110" y1="142" x2="124" y2="140"
+                  class="tablet-line"></line>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">02</span>
+
       </button>
 
-      <button class="character-option" data-character="03">
-        <span class="character-icon">★</span>
-        <span>03</span>
+
+
+      <!-- NHÂN VẬT 03 -->
+      <button class="character-option" data-character="03" type="button">
+
+        <span class="character-number">03</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <rect x="52" y="89" width="56" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="44" y="96" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <!-- raised arm -->
+            <rect x="103" y="85" width="16" height="48" rx="8"
+                  transform="rotate(-42 103 85)"
+                  class="astronaut-limb"></rect>
+
+            <!-- other arm -->
+            <rect x="37" y="104" width="17" height="40" rx="8"
+                  transform="rotate(12 37 104)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- star -->
+            <text x="126" y="62"
+                  class="floating-star">✦</text>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">03</span>
+
       </button>
 
-      <button class="character-option" data-character="04">
-        <span class="character-icon">✹</span>
-        <span>04</span>
+
+
+      <!-- NHÂN VẬT 04 -->
+      <button class="character-option" data-character="04" type="button">
+
+        <span class="character-number">04</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <circle cx="80" cy="66" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="67" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="60" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <rect x="51" y="89" width="58" height="65" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="98" width="13" height="42" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <rect x="35" y="117" width="25" height="15" rx="7"
+                  transform="rotate(25 35 117)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="101" y="117" width="25" height="15" rx="7"
+                  transform="rotate(-25 101 117)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- small planet -->
+            <circle cx="127" cy="55" r="8"
+                    class="mini-planet"></circle>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">04</span>
+
       </button>
 
-      <button class="character-option" data-character="05">
-        <span class="character-icon">✦</span>
-        <span>05</span>
+
+
+      <!-- NHÂN VẬT 05 -->
+      <button class="character-option" data-character="05" type="button">
+
+        <span class="character-number">05</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <rect x="51" y="89" width="58" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="97" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <rect x="36" y="102" width="17" height="45" rx="8"
+                  transform="rotate(30 36 102)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="104" y="102" width="17" height="45" rx="8"
+                  transform="rotate(-20 104 102)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- star map -->
+            <rect x="27" y="72" width="34" height="27" rx="3"
+                  transform="rotate(-8 27 72)"
+                  class="astronaut-panel"></rect>
+
+            <circle cx="38" cy="81" r="2"
+                    class="panel-light"></circle>
+
+            <circle cx="48" cy="88" r="2"
+                    class="panel-light"></circle>
+
+            <line x1="38" y1="81" x2="48" y2="88"
+                  class="tablet-line"></line>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">05</span>
+
       </button>
 
-      <button class="character-option" data-character="06">
-        <span class="character-icon">✧</span>
-        <span>06</span>
+
+
+      <!-- NHÂN VẬT 06 -->
+      <button class="character-option" data-character="06" type="button">
+
+        <span class="character-number">06</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <rect x="51" y="89" width="58" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="97" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <!-- reaching -->
+            <rect x="101" y="88" width="17" height="50" rx="8"
+                  transform="rotate(-48 101 88)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="38" y="104" width="17" height="42" rx="8"
+                  transform="rotate(12 38 104)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <text x="123" y="53"
+                  class="floating-star">✦</text>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">06</span>
+
       </button>
 
-      <button class="character-option" data-character="07">
-        <span class="character-icon">★</span>
-        <span>07</span>
+
+
+      <!-- NHÂN VẬT 07 -->
+      <button class="character-option" data-character="07" type="button">
+
+        <span class="character-number">07</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <rect x="51" y="89" width="58" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="97" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <rect x="36" y="105" width="17" height="44" rx="8"
+                  transform="rotate(25 36 105)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="103" y="100" width="17" height="46" rx="8"
+                  transform="rotate(-18 103 100)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <!-- telescope -->
+            <rect x="104" y="72" width="38" height="12" rx="6"
+                  transform="rotate(-18 104 72)"
+                  class="telescope"></rect>
+
+            <circle cx="140" cy="69" r="8"
+                    class="telescope-lens"></circle>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">07</span>
+
       </button>
 
-      <button class="character-option" data-character="08">
-        <span class="character-icon">✹</span>
-        <span>08</span>
+
+
+      <!-- NHÂN VẬT 08 -->
+      <button class="character-option" data-character="08" type="button">
+
+        <span class="character-number">08</span>
+
+        <span class="character-orbit orbit-1"></span>
+        <span class="character-orbit orbit-2"></span>
+
+        <span class="character-illustration">
+
+          <svg viewBox="0 0 160 190" aria-hidden="true">
+
+            <circle cx="80" cy="88" r="54" class="svg-glow"></circle>
+
+            <circle cx="80" cy="65" r="34"
+                    class="astronaut-helmet"></circle>
+
+            <ellipse cx="80" cy="66" rx="24" ry="19"
+                     class="astronaut-visor"></ellipse>
+
+            <ellipse cx="72" cy="59" rx="8" ry="5"
+                     class="visor-light"></ellipse>
+
+            <rect x="51" y="89" width="58" height="67" rx="23"
+                  class="astronaut-body"></rect>
+
+            <rect x="43" y="97" width="13" height="43" rx="6"
+                  class="astronaut-pack"></rect>
+
+            <!-- floating pose -->
+            <rect x="31" y="105" width="17" height="43" rx="8"
+                  transform="rotate(35 31 105)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="106" y="101" width="17" height="45" rx="8"
+                  transform="rotate(-35 106 101)"
+                  class="astronaut-limb"></rect>
+
+            <rect x="52" y="124" width="56" height="8" rx="4"
+                  class="astronaut-detail"></rect>
+
+            <circle cx="31" cy="48" r="4"
+                    class="floating-dot"></circle>
+
+            <circle cx="128" cy="105" r="3"
+                    class="floating-dot"></circle>
+
+          </svg>
+
+        </span>
+
+        <span class="character-label">08</span>
+
       </button>
 
     </div>
 
-    <button id="enterGalaxy" class="primary-button" disabled>
-      Khám phá vũ trụ
+
+    <div class="character-selection-status">
+      <span class="status-dot"></span>
+      <span id="characterStatus">
+        Chọn một người bạn đồng hành để tiếp tục
+      </span>
+    </div>
+
+
+    <button id="enterGalaxy"
+            class="primary-button character-enter-button"
+            type="button"
+            disabled>
+
+      BƯỚC VÀO VŨ TRỤ
+      <span>→</span>
+
     </button>
 
   </div>
