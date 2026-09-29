@@ -107,10 +107,15 @@
           Ngày sinh của bạn
         </label>
 
-        <input
-          id="playerBirthday"
-          type="date"
-        >
+        <div class="birthday-select">
+  <select id="birthDay">
+    <option value="">Ngày</option>
+  </select>
+
+  <select id="birthMonth">
+    <option value="">Tháng</option>
+  </select>
+</div>
 
       </div>
 
@@ -132,127 +137,70 @@
        MÀN HÌNH 3 — CHỌN NHÂN VẬT
   ====================================================== -->
 
-  <section
-    id="characterScreen"
-    class="screen character-screen"
-  >
+  <section id="characterScreen" class="screen character-screen">
 
-    <div class="character-container">
+  <div class="character-content">
 
-      <div class="eyebrow">
-        NGƯỜI BẠN ĐỒNG HÀNH
-      </div>
+    <p class="eyebrow">BƯỚC TIẾP THEO</p>
 
-      <h2>
-        Hôm nay, bạn sẽ du hành cùng ai?
-      </h2>
+    <h1>Chọn người bạn đồng hành</h1>
 
-      <p>
-        Chọn một nhân vật để bắt đầu hành trình.
-      </p>
+    <p class="character-description">
+      Mỗi hành trình trong vũ trụ đều có một người bạn đồng hành.
+      Hãy chọn một biểu tượng cho chuyến khám phá của bạn.
+    </p>
 
+    <div class="character-grid">
 
-      <div
-        id="characterGrid"
-        class="character-grid"
-      >
+      <button class="character-option" data-character="01">
+        <span class="character-icon">✦</span>
+        <span>01</span>
+      </button>
 
-        <!--
-          Các nhân vật hiện tại chỉ là placeholder.
-          Sau này chúng ta sẽ thay bằng
-          hình minh họa riêng.
-        -->
+      <button class="character-option" data-character="02">
+        <span class="character-icon">✧</span>
+        <span>02</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="01"
-          type="button"
-          aria-label="Nhân vật 1"
-        >
-          ◇
-        </button>
+      <button class="character-option" data-character="03">
+        <span class="character-icon">★</span>
+        <span>03</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="02"
-          type="button"
-          aria-label="Nhân vật 2"
-        >
-          ✦
-        </button>
+      <button class="character-option" data-character="04">
+        <span class="character-icon">✹</span>
+        <span>04</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="03"
-          type="button"
-          aria-label="Nhân vật 3"
-        >
-          ◈
-        </button>
+      <button class="character-option" data-character="05">
+        <span class="character-icon">✦</span>
+        <span>05</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="04"
-          type="button"
-          aria-label="Nhân vật 4"
-        >
-          ✧
-        </button>
+      <button class="character-option" data-character="06">
+        <span class="character-icon">✧</span>
+        <span>06</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="05"
-          type="button"
-          aria-label="Nhân vật 5"
-        >
-          ☆
-        </button>
+      <button class="character-option" data-character="07">
+        <span class="character-icon">★</span>
+        <span>07</span>
+      </button>
 
-        <button
-          class="character"
-          data-character="06"
-          type="button"
-          aria-label="Nhân vật 6"
-        >
-          ✶
-        </button>
-
-        <button
-          class="character"
-          data-character="07"
-          type="button"
-          aria-label="Nhân vật 7"
-        >
-          ✹
-        </button>
-
-        <button
-          class="character"
-          data-character="08"
-          type="button"
-          aria-label="Nhân vật 8"
-        >
-          ✺
-        </button>
-
-      </div>
-
-
-      <br>
-
-      <button
-        id="enterGalaxy"
-        class="primary-btn"
-        type="button"
-        disabled
-      >
-        BƯỚC VÀO VŨ TRỤ
+      <button class="character-option" data-character="08">
+        <span class="character-icon">✹</span>
+        <span>08</span>
       </button>
 
     </div>
 
-  </section>
+    <button id="enterGalaxy" class="primary-button" disabled>
+      Khám phá vũ trụ
+    </button>
 
+  </div>
+
+</section>
 
   <!-- =====================================================
        MÀN HÌNH 4 — GALAXY GAME
