@@ -99,39 +99,54 @@
       </div>
 
 
-      <!-- Ngày sinh -->
+    <!-- Ngày sinh -->
 
-      <div class="form-group">
+<div class="form-group">
 
-        <label for="playerBirthday">
-          Ngày sinh của bạn
-        </label>
+  <label>
+    Ngày sinh của bạn
+  </label>
 
-        <div class="birthday-select">
-  <select id="birthDay">
-    <option value="">Ngày</option>
-  </select>
+  <div class="birthday-select">
 
-  <select id="birthMonth">
-    <option value="">Tháng</option>
-  </select>
-</div>
-
-      </div>
-
-
-      <button
-        id="continueToCharacter"
-        class="primary-btn"
-        type="button"
+    <div class="birthday-field">
+      <input
+        type="number"
+        id="birthDay"
+        placeholder="Ngày"
+        min="1"
+        max="31"
+        inputmode="numeric"
       >
-        TIẾP TỤC HÀNH TRÌNH
-      </button>
-
     </div>
 
-  </section>
+    <div class="birthday-field">
+      <input
+        type="number"
+        id="birthMonth"
+        placeholder="Tháng"
+        min="1"
+        max="12"
+        inputmode="numeric"
+      >
+    </div>
 
+  </div>
+
+</div>
+
+
+<button
+  id="continueToCharacter"
+  class="primary-btn"
+  type="button"
+>
+  TIẾP TỤC HÀNH TRÌNH
+</button>
+
+</div>
+
+</section>
 
   <!-- =====================================================
        MÀN HÌNH 3 — CHỌN NHÂN VẬT
