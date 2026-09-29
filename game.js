@@ -198,9 +198,14 @@ startButton.addEventListener("click", function() {
 
 continueToCharacter.addEventListener("click", function() {
 
-  const code = normalizeCode(playerNameInput.value);
-  const date = getBirthday(playerBirthdayInput.value);
+const code = normalizeCode(playerNameInput.value);
 
+const day = birthDayInput.value;
+const month = birthMonthInput.value;
+
+const date = day && month
+  ? day + "/" + month
+  : "";
   if (!code || !date) {
     alert("Vui lòng nhập đầy đủ mã ký hiệu và ngày sinh.");
     return;
@@ -221,7 +226,6 @@ continueToCharacter.addEventListener("click", function() {
   showScreen(characterScreen);
 });
 
-
 // ===============================
 // CHỌN NHÂN VẬT
 // ===============================
@@ -230,19 +234,23 @@ characterButtons.forEach(function(button) {
 
   button.addEventListener("click", function() {
 
+    // Bỏ trạng thái đã chọn của các nhân vật khác
     characterButtons.forEach(function(item) {
       item.classList.remove("selected");
     });
 
+    // Đánh dấu nhân vật hiện tại
     button.classList.add("selected");
 
+    // Lưu nhân vật
     player.character = button.dataset.character;
 
+    // Cho phép vào vũ trụ
     enterGalaxyButton.disabled = false;
+
   });
 
 });
-
 
 // ===============================
 // VÀO VŨ TRỤ
@@ -251,6 +259,7 @@ characterButtons.forEach(function(button) {
 enterGalaxyButton.addEventListener("click", function() {
 
   if (!player.character) {
+    alert("Hãy chọn một người bạn đồng hành trước khi tiếp tục.");
     return;
   }
 
