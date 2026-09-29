@@ -737,37 +737,28 @@ function checkNearbyStars() {
 
   birthdayStars.forEach(function(star) {
 
-
-    // Sao đã kiểm tra rồi
-    // → không bao giờ phát tín hiệu lại
-
-    if (
-      star.dataset.checked === "true"
-    ) {
-
+    // Sao đã được kiểm tra rồi → bỏ qua
+    if (star.dataset.checked === "true") {
       return;
     }
 
 
-    const starX =
-      parseFloat(
-        star.style.left
-      );
+    // Lấy vị trí sao
 
+    const starX =
+      parseFloat(star.style.left);
 
     const starY =
-      parseFloat(
-        star.style.top
-      );
+      parseFloat(star.style.top);
 
+
+    // Tính khoảng cách giữa người chơi và sao
 
     const dx =
       player.x - starX;
 
-
     const dy =
       player.y - starY;
-
 
     const distance =
       Math.sqrt(
@@ -776,11 +767,26 @@ function checkNearbyStars() {
       );
 
 
-    // Chỉ khi thật sự chạm rất gần
+    // =============================
+    // 1. ĐANG Ở GẦN SAO
+    // =============================
 
-    if (
-      distance < 2.2
-    ) {
+    if (distance < 8) {
+
+      star.classList.add("nearby");
+
+    } else {
+
+      star.classList.remove("nearby");
+
+    }
+
+
+    // =============================
+    // 2. THẬT SỰ CHẠM SAO
+    // =============================
+
+    if (distance < 2.2) {
 
       triggerSignal(star);
 
