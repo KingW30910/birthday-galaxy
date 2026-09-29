@@ -138,6 +138,47 @@ const revealMessage = document.getElementById("revealMessage");
 
 const restartButton = document.getElementById("restartButton");
 
+// ===============================
+// TẠO DANH SÁCH NGÀY / THÁNG
+// ===============================
+
+for (let day = 1; day <= 31; day++) {
+
+  const option = document.createElement("option");
+
+  option.value = String(day).padStart(2, "0");
+  option.textContent = day;
+
+  birthDayInput.appendChild(option);
+}
+
+
+const months = [
+  { value: "01", text: "Tháng 1" },
+  { value: "02", text: "Tháng 2" },
+  { value: "03", text: "Tháng 3" },
+  { value: "04", text: "Tháng 4" },
+  { value: "05", text: "Tháng 5" },
+  { value: "06", text: "Tháng 6" },
+  { value: "07", text: "Tháng 7" },
+  { value: "08", text: "Tháng 8" },
+  { value: "09", text: "Tháng 9" },
+  { value: "10", text: "Tháng 10" },
+  { value: "11", text: "Tháng 11" },
+  { value: "12", text: "Tháng 12" }
+];
+
+
+months.forEach(function(month) {
+
+  const option = document.createElement("option");
+
+  option.value = month.value;
+  option.textContent = month.text;
+
+  birthMonthInput.appendChild(option);
+
+});
 
 // ===============================
 // CHUYỂN MÀN HÌNH
