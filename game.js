@@ -32,76 +32,160 @@ const MEMBERS = [
 
 const STAR_DATA = {
 
-  "02/09": {
-    title: "Một điểm sáng trong tháng Chín",
-    message:
-      "Một hành trình mới lại bắt đầu. Chúc bạn thêm một vòng quanh Mặt Trời thật nhiều điều đáng nhớ."
+ "02/09": {
+    title: "Ngôi sao của bạn",
+    object: "Hubble Ultra Deep Field",
+    science:
+      "Một vùng trời cực sâu chứa hàng nghìn thiên hà, trong đó có những thiên hà được nhìn thấy ở thời điểm rất xa trong quá khứ. Hubble đã quan sát khu vực này trong năm 2009.",
+    distance:
+      "Có những thiên hà cách chúng ta tới khoảng 13 tỷ năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/september-2.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "03/09": {
-    title: "Một điểm sáng trong tháng Chín",
-    message:
-      "Mỗi năm đi qua là một câu chuyện mới. Chúc bạn luôn tìm thấy những điều khiến mình muốn tiến về phía trước."
+    title: "Ngôi sao của bạn",
+    object: "Galaxy HUDF-JD2",
+    science:
+      "Một ứng viên thiên hà ở rất xa trong vùng Hubble Ultra Deep Field. Ánh sáng từ thiên thể này đã mất khoảng 13 tỷ năm để đến với chúng ta.",
+    distance:
+      "Khoảng 13 tỷ năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/september-3.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "05/09": {
-    title: "Một điểm sáng trong tháng Chín",
-    message:
-      "Giữa rất nhiều vì sao, hôm nay vũ trụ có một điểm sáng dành riêng cho bạn."
+    title: "Ngôi sao của bạn",
+    object: "Hubble Ultra Deep Field",
+    science:
+      "Một vùng trời sâu nơi Hubble ghi lại vô số thiên hà mờ nhạt nằm rải rác trên nền không gian tối. Đây là một trong những kiểu quan sát cho thấy vũ trụ rộng lớn đến mức nào.",
+    distance:
+      "Có những thiên hà cách chúng ta tới khoảng 13 tỷ năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/september-5.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "13/09": {
-    title: "Một điểm sáng trong tháng Chín",
-    message:
-      "Chúc bạn thêm một tuổi mới với những cuộc gặp gỡ đẹp, những trải nghiệm đáng nhớ và thật nhiều khoảnh khắc bình yên."
+    title: "Ngôi sao của bạn",
+    object: "Arches Cluster",
+    science:
+      "Một cụm sao trẻ và cực kỳ đồ sộ nằm gần trung tâm Ngân Hà. Hàng nghìn ngôi sao tập trung trong một vùng không gian tương đối nhỏ.",
+    distance:
+      "Khoảng 25.000 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/september-13.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "25/09": {
-    title: "Một điểm sáng trong tháng Chín",
-    message:
-      "Thêm một vòng quanh Mặt Trời, thêm một chương mới. Chúc chương tiếp theo thật đáng để nhớ."
+    title: "Ngôi sao của bạn",
+    object: "Galaxy NGC 1132",
+    science:
+      "Một thiên hà elip khổng lồ nằm trong một hệ hóa thạch — dấu vết còn lại của quá trình nhiều thiên hà nhỏ hợp nhất trong lịch sử vũ trụ.",
+    distance:
+      "Khoảng 320 triệu năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/september-25.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "09/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Chúc bạn luôn có đủ ánh sáng để nhìn thấy những điều tốt đẹp đang hiện diện quanh mình."
+    title: "Ngôi sao của bạn",
+    object: "Galaxy Cluster Abell 2667",
+    science:
+      "Một cụm thiên hà khổng lồ gồm nhiều thiên hà liên kết với nhau bởi lực hấp dẫn. Khối lượng lớn của cụm còn có thể làm bẻ cong ánh sáng từ các thiên thể xa hơn.",
+    distance:
+      "Khoảng 3,2 tỷ năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-9.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "10/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Vũ trụ rộng lớn, nhưng hôm nay vẫn có một điểm sáng nhỏ dành riêng cho bạn."
+    title: "Ngôi sao của bạn",
+    object: "Interacting Galaxies Arp 148",
+    science:
+      "Hai thiên hà đang tương tác hấp dẫn với nhau, tạo nên một cấu trúc đặc biệt trong quá trình biến đổi và tương tác của chúng.",
+    distance:
+      "Khoảng 450 triệu năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-10.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "11/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Chúc hành trình mới của bạn có thêm nhiều điều bất ngờ, nhiều niềm vui và những người đồng hành đáng quý."
+    title: "Ngôi sao của bạn",
+    object: "GOODS South Field",
+    science:
+      "Một vùng trời sâu chứa rất nhiều thiên hà ở những khoảng cách khác nhau. Hubble đã sử dụng các quan sát sâu để nhìn xuyên qua một vùng trời nhỏ và phát hiện một vũ trụ đầy những thiên hà xa xôi.",
+    distance:
+      "Có những thiên hà cách chúng ta tới khoảng 13 tỷ năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-11.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "16/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Một vòng quanh Mặt Trời nữa đã hoàn thành. Chúc bạn tiếp tục có những quỹ đạo thật đẹp của riêng mình."
+    title: "Ngôi sao của bạn",
+    object: "Ring Nebula",
+    science:
+      "Tinh vân Vành Nhẫn là lớp khí và bụi được một ngôi sao giống Mặt Trời giải phóng khi tiến đến giai đoạn cuối của vòng đời.",
+    distance:
+      "Khoảng 2.300 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-16.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "18/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Có những ngày chỉ là một dấu mốc trên lịch. Và có những ngày khiến cả một nhóm người muốn gửi lời chúc đến bạn."
+    title: "Ngôi sao của bạn",
+    object: "Reflection Nebula N30B",
+    science:
+      "Một vùng tinh vân phản xạ nằm trong Đám Mây Magellan Lớn. Ánh sáng của các ngôi sao trẻ làm nổi bật khí và bụi xung quanh chúng.",
+    distance:
+      "Khoảng 160.000 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-18.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "20/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Hôm nay, vũ trụ đặc biệt dành một khoảng trời để đánh dấu ngày của bạn."
+    title: "Ngôi sao của bạn",
+    object: "30 Doradus",
+    science:
+      "Một trong những vùng hình thành sao nổi bật nhất trong vùng lân cận của chúng ta. Hàng loạt ngôi sao trẻ, nóng và khối lượng lớn đang hình thành giữa những đám mây khí và bụi khổng lồ.",
+    distance:
+      "Khoảng 160.000 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-20.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   },
 
   "31/10": {
-    title: "Một điểm sáng trong tháng Mười",
-    message:
-      "Một ngày đặc biệt giữa những ngày cuối tháng. Chúc bạn bước vào vòng quay mới với thật nhiều điều đáng mong đợi."
+    title: "Ngôi sao của bạn",
+    object: "Nebula NGC 281",
+    science:
+      "Một tinh vân phát xạ trong chòm sao Cassiopeia, nơi khí phát sáng xung quanh các ngôi sao trẻ tạo nên khung cảnh giống một đám mây giữa những vì sao.",
+    distance:
+      "Khoảng 9.500 năm ánh sáng.",
+    image:
+      "https://cdn.hubblebirthday.com/october-31.jpg",
+    credit:
+      "NASA / ESA — Kính viễn vọng Không gian Hubble"
   }
 
 };
@@ -224,6 +308,8 @@ const revealWishSection =
 const revealWish =
   document.getElementById("revealWish");
 
+const revealTransition =
+  document.getElementById("revealTransition");
 
 const restartButton =
   document.getElementById("restartButton");
@@ -1039,16 +1125,12 @@ function showReveal(date) {
     return;
   }
 
-  // -------------------------------
-  // TIÊU ĐỀ
-  // -------------------------------
+  // =================================
+  // CHUẨN BỊ NỘI DUNG REVEAL
+  // =================================
 
   revealTitle.textContent =
     data.title;
-
-  // -------------------------------
-  // NGÀY SINH
-  // -------------------------------
 
   const dateParts =
     date.split("/");
@@ -1078,20 +1160,12 @@ function showReveal(date) {
   revealDate.textContent =
     day + " " + monthNames[Number(month)];
 
-  // -------------------------------
-  // ẢNH HUBBLE
-  // -------------------------------
-
   revealImage.src =
     data.image;
 
   revealImage.alt =
     data.object +
-    " - ảnh từ Kính viễn vọng Không gian Hubble";
-
-  // -------------------------------
-  // THÔNG TIN THIÊN VĂN
-  // -------------------------------
+    " — ảnh thiên văn từ Hubble";
 
   revealObject.textContent =
     data.object;
@@ -1102,25 +1176,57 @@ function showReveal(date) {
   revealCredit.textContent =
     "Ảnh: " + data.credit;
 
-  // -------------------------------
-  // LỜI CHÚC
-  // HIỆN TẠI CHƯA CÓ
-  // -------------------------------
-
+  // Hiện tại chưa có lời chúc
   revealWishSection.style.display =
     "none";
 
   revealWish.textContent =
     "";
 
-  // -------------------------------
-  // HIỆN MÀN HÌNH
-  // -------------------------------
+  // =================================
+  // CHUYỂN CẢNH
+  // =================================
 
-  showScreen(revealScreen);
+  revealTransition.classList.remove(
+    "leaving"
+  );
+
+  revealTransition.classList.add(
+    "active"
+  );
+
+  // Chờ ánh sáng mở ra
+  setTimeout(function() {
+
+    showScreen(
+      revealScreen
+    );
+
+  }, 420);
+
+  // Cho Reveal xuất hiện phía sau
+  setTimeout(function() {
+
+    revealTransition.classList.add(
+      "leaving"
+    );
+
+  }, 1050);
+
+  // Dọn lớp chuyển cảnh
+  setTimeout(function() {
+
+    revealTransition.classList.remove(
+      "active"
+    );
+
+    revealTransition.classList.remove(
+      "leaving"
+    );
+
+  }, 1700);
 
 }
-
 
 // ===============================
 // NÚT CHƠI LẠI
