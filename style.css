@@ -571,3 +571,36 @@ button {
 .birthday-field input:focus {
   border-color: rgba(255, 255, 255, 0.5);
 }
+
+/* ===============================
+   SAO ĐÃ KIỂM TRA
+   =============================== */
+
+.birthday-star.checked {
+  clip-path: none;
+  width: 28px;
+  height: 28px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 50%;
+
+  color: rgba(255, 255, 255, 0.55);
+
+  font-size: 24px;
+  font-weight: 300;
+
+  box-shadow: none;
+
+  transform: scale(0.8);
+}
+
+.birthday-star.checked:hover {
+  transform: scale(0.8);
+}
