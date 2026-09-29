@@ -86,13 +86,13 @@
       <div class="form-group">
 
         <label for="playerName">
-          Tên của bạn
+          Tên của bạn (lấy chữ cái đầu, ví dụ Nguyễn Văn An, sẽ viết NVA)
         </label>
 
         <input
           id="playerName"
           type="text"
-          placeholder="Nhập tên của bạn"
+          placeholder="Nhập mã ký hiệu của bạn"
           autocomplete="name"
         >
 
@@ -266,4 +266,247 @@
 
       <div class="milky-way"></div>
 
+
+      <!-- Các sao nền sẽ được JavaScript tạo -->
+      <div id="backgroundStars"></div>
+
+
+      <!-- Trái Đất -->
+
+      <div
+        class="earth"
+        id="earth"
+        title="Trái Đất"
+      ></div>
+
+
+      <!-- =================================================
+           CÁC ĐIỂM SÁNG SINH NHẬT
+      ================================================== -->
+
+      <button
+        class="birthday-star star-blue"
+        data-date="02/09"
+        style="left: 18%; top: 30%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-purple"
+        data-date="03/09"
+        style="left: 32%; top: 18%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-gold"
+        data-date="13/09"
+        style="left: 52%; top: 25%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-cyan"
+        data-date="05/09"
+        style="left: 72%; top: 20%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-purple"
+        data-date="25/09"
+        style="left: 84%; top: 38%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-blue"
+        data-date="16/10"
+        style="left: 67%; top: 45%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-gold"
+        data-date="11/10"
+        style="left: 45%; top: 48%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-cyan"
+        data-date="20/10"
+        style="left: 25%; top: 58%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-purple"
+        data-date="31/10"
+        style="left: 12%; top: 72%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-gold"
+        data-date="09/10"
+        style="left: 43%; top: 75%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-blue"
+        data-date="10/10"
+        style="left: 61%; top: 72%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+      <button
+        class="birthday-star star-cyan"
+        data-date="18/10"
+        style="left: 82%; top: 70%;"
+        aria-label="Một điểm sáng"
+      ></button>
+
+
+      <!-- =================================================
+           NHÂN VẬT NGƯỜI CHƠI
+      ================================================== -->
+
+      <div
+        id="player"
+        class="player"
+        style="left: 50%; top: 85%;"
+      >
+        ✦
+      </div>
+
+
+      <!-- =================================================
+           THANH THÔNG TIN
+      ================================================== -->
+
+      <div class="game-hud">
+
+        <div class="hud-title">
+          VŨ TRỤ SINH NHẬT
+        </div>
+
+        <div
+          id="hudPlayerName"
+          class="hud-name"
+        >
+          Nhà du hành
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- =================================================
+         MODAL — TÍN HIỆU
+    ================================================== -->
+
+    <div
+      id="signalModal"
+      class="modal-overlay"
+    >
+
+      <div class="modal">
+
+        <div class="eyebrow">
+          PHÁT HIỆN TÍN HIỆU
+        </div>
+
+        <h2 id="signalTitle">
+          Có một điểm sáng ở gần bạn.
+        </h2>
+
+        <p id="signalMessage">
+          Một tín hiệu đang phát ra từ
+          vùng không gian này.
+        </p>
+
+        <button
+          id="checkSignal"
+          class="primary-btn"
+          type="button"
+        >
+          KIỂM TRA TÍN HIỆU
+        </button>
+
+        <br><br>
+
+        <button
+          id="closeSignal"
+          class="primary-btn"
+          type="button"
+        >
+          TIẾP TỤC KHÁM PHÁ
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       MÀN HÌNH 5 — REVEAL
+  ====================================================== -->
+
+  <section
+    id="revealScreen"
+    class="screen reveal-screen"
+  >
+
+    <div class="reveal-content">
+
+      <div class="eyebrow">
+        VŨ TRỤ ĐÃ NHẬN RA BẠN
+      </div>
+
+      <h1 id="revealTitle">
+        Đã tìm thấy điểm sáng.
+      </h1>
+
+      <div
+        id="revealDate"
+        class="date"
+      >
+        00/00
+      </div>
+
+      <p
+        id="revealMessage"
+        class="message"
+      >
+        Một hành trình mới lại bắt đầu.
+      </p>
+
+      <br><br>
+
+      <button
+        id="restartButton"
+        class="primary-btn"
+        type="button"
+      >
+        TRỞ LẠI VŨ TRỤ
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
+
+  <script src="game.js"></script>
+
+</body>
+</html>
 ```
