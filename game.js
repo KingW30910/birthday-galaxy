@@ -515,62 +515,75 @@ characterButtons.forEach(function(button) {
 
 enterGalaxyButton.addEventListener("click", function() {
 
-
   if (!player.character) {
-
-    alert(
-      "Hãy chọn một người bạn đồng hành trước khi tiếp tục."
-    );
-
+    alert("Hãy chọn một người bạn đồng hành trước khi tiếp tục.");
     return;
   }
 
+  player.x = 50;
+  player.y = 85;
+  player.searchingSince = Date.now();
+  player.currentSignal = null;
+  player.unlocked = false;
 
-  // Đặt lại vị trí ban đầu
+  hudPlayerName.textContent = player.code;
 
-  player.x =
-    50;
-
-  player.y =
-    85;
-
-
-  // Bắt đầu tính thời gian khám phá
-
-  player.searchingSince =
-    Date.now();
-
-
-  // Xóa trạng thái cũ
-
-  player.currentSignal =
-    null;
-
-  player.unlocked =
-    false;
-
-
-  // Hiển thị mã người chơi
-
-  hudPlayerName.textContent =
-    player.code;
-
-
-  // Tạo nền sao
+  /*
+   * Đưa nhân vật đã chọn vào galaxy
+   */
+  setPlayerCharacter();
 
   createBackgroundStars();
-
-
-  // Cập nhật vị trí nhân vật
-
   updatePlayerPosition();
 
-
-  // Vào game
-
   showScreen(gameScreen);
-
 });
+    function setPlayerCharacter() {
+
+  const playerElement = document.getElementById("player");
+
+  if (!playerElement) return;
+
+  /*
+   * Xóa avatar cũ nếu có
+   */
+  playerElement.innerHTML = "";
+
+  /*
+   * Tìm đúng nhân vật mà người chơi đã chọn
+   */
+  const selectedCharacter = document.querySelector(
+    '.character-option[data-character="' +
+    player.character +
+    '"]'
+  );
+
+  if (!selectedCharacter) return;
+
+  /*
+   * Lấy SVG từ thẻ nhân vật
+   */
+  const originalSvg =
+    selectedCharacter.querySelector("svg");
+
+  if (!originalSvg) return;
+
+  /*
+   * Tạo bản sao SVG
+   */
+  const playerSvg =
+    originalSvg.cloneNode(true);
+
+  /*
+   * Gắn class riêng cho avatar trong galaxy
+   */
+  playerSvg.classList.add("player-avatar-svg");
+
+  /*
+   * Thêm vào player
+   */
+  playerElement.appendChild(playerSvg);
+}
 
 
 // ===============================
