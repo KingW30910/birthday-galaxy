@@ -488,31 +488,24 @@ characterButtons.forEach(function(button) {
 
     // Bỏ trạng thái chọn cũ
 
+    const characterStatus = document.getElementById("characterStatus");
+
+characterButtons.forEach(function(button) {
+  button.addEventListener("click", function() {
+
     characterButtons.forEach(function(item) {
-
       item.classList.remove("selected");
-
     });
-
-
-    // Chọn nhân vật hiện tại
 
     button.classList.add("selected");
 
+    player.character = button.dataset.character;
 
-    // Lưu nhân vật
+    enterGalaxyButton.disabled = false;
 
-    player.character =
-      button.dataset.character;
-
-
-    // Cho phép vào vũ trụ
-
-    enterGalaxyButton.disabled =
-      false;
-
+    characterStatus.textContent =
+      "Đã chọn người bạn đồng hành · " + player.character;
   });
-
 });
 
 
