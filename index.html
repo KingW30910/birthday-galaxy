@@ -419,50 +419,99 @@
   <!-- =====================================================
        MÀN HÌNH 5 — REVEAL
   ====================================================== -->
+<section id="revealScreen" class="screen reveal-screen">
 
-  <section
-    id="revealScreen"
-    class="screen reveal-screen"
-  >
+  <div class="reveal-stars"></div>
 
-    <div class="reveal-content">
+  <div class="reveal-content">
 
-      <div class="eyebrow">
-        VŨ TRỤ ĐÃ NHẬN RA BẠN
+    <p class="reveal-eyebrow">
+      ✦ TÍN HIỆU ĐÃ ĐƯỢC GIẢI MÃ ✦
+    </p>
+
+    <h1 id="revealTitle">
+      Ngôi sao của bạn
+    </h1>
+
+    <div class="reveal-date-wrap">
+      <span class="reveal-date-line"></span>
+
+      <div id="revealDate" class="reveal-date">
+        20 THÁNG 10
       </div>
 
-      <h1 id="revealTitle">
-        Đã tìm thấy điểm sáng.
-      </h1>
+      <span class="reveal-date-line"></span>
+    </div>
 
-      <div
-        id="revealDate"
-        class="date"
+    <!-- HÌNH ẢNH HUBBLE -->
+    <div class="reveal-image-frame">
+
+      <div class="reveal-image-glow"></div>
+
+      <img
+        id="revealImage"
+        src=""
+        alt="Ảnh thiên văn từ Kính viễn vọng Không gian Hubble"
       >
-        00/00
-      </div>
-
-      <p
-        id="revealMessage"
-        class="message"
-      >
-        Một hành trình mới lại bắt đầu.
-      </p>
-
-      <br><br>
-
-      <button
-        id="restartButton"
-        class="primary-btn"
-        type="button"
-      >
-        TRỞ LẠI VŨ TRỤ
-      </button>
 
     </div>
 
-  </section>
+    <!-- THÔNG TIN THIÊN VĂN -->
+    <div class="reveal-info">
 
+      <p class="reveal-label">
+        ĐIỂM NHÌN TỪ HUBBLE
+      </p>
+
+      <h2 id="revealObject">
+        30 Doradus
+      </h2>
+
+      <p id="revealScience">
+        Một vùng hình thành sao khổng lồ trong Đám Mây Magellan Lớn.
+      </p>
+
+      <p id="revealCredit" class="reveal-credit">
+        Ảnh: NASA / ESA / Hubble
+      </p>
+
+    </div>
+
+    <!-- LỜI CHÚC — CHƯA HIỂN THỊ -->
+    <div
+      id="revealWishSection"
+      class="reveal-wish"
+      style="display: none;"
+    >
+
+      <p class="reveal-label">
+        NHỮNG LỜI GỬI ĐẾN BẠN
+      </p>
+
+      <p id="revealWish"></p>
+
+    </div>
+
+    <div class="reveal-footer">
+      <p>
+        Thêm một vòng quanh Mặt Trời.
+      </p>
+
+      <p>
+        Và thêm một câu chuyện để kể.
+      </p>
+    </div>
+
+    <button
+      id="restartButton"
+      class="primary-button reveal-button"
+    >
+      KHÁM PHÁ LẠI VŨ TRỤ
+    </button>
+
+  </div>
+
+</section>
 
   <!-- =====================================================
        JAVASCRIPT
