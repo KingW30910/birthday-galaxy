@@ -206,8 +206,23 @@ const revealTitle =
 const revealDate =
   document.getElementById("revealDate");
 
-const revealMessage =
-  document.getElementById("revealMessage");
+const revealImage =
+  document.getElementById("revealImage");
+
+const revealObject =
+  document.getElementById("revealObject");
+
+const revealScience =
+  document.getElementById("revealScience");
+
+const revealCredit =
+  document.getElementById("revealCredit");
+
+const revealWishSection =
+  document.getElementById("revealWishSection");
+
+const revealWish =
+  document.getElementById("revealWish");
 
 
 const restartButton =
@@ -1018,31 +1033,91 @@ checkSignal.addEventListener("click", function() {
 
 function showReveal(date) {
 
-  const data =
-    STAR_DATA[date];
-
+  const data = STAR_DATA[date];
 
   if (!data) {
-
     return;
   }
 
+  // -------------------------------
+  // TIÊU ĐỀ
+  // -------------------------------
 
   revealTitle.textContent =
     data.title;
 
+  // -------------------------------
+  // NGÀY SINH
+  // -------------------------------
+
+  const dateParts =
+    date.split("/");
+
+  const day =
+    dateParts[0];
+
+  const month =
+    dateParts[1];
+
+  const monthNames = [
+    "",
+    "THÁNG MỘT",
+    "THÁNG HAI",
+    "THÁNG BA",
+    "THÁNG TƯ",
+    "THÁNG NĂM",
+    "THÁNG SÁU",
+    "THÁNG BẢY",
+    "THÁNG TÁM",
+    "THÁNG CHÍN",
+    "THÁNG MƯỜI",
+    "THÁNG MƯỜI MỘT",
+    "THÁNG MƯỜI HAI"
+  ];
 
   revealDate.textContent =
-    date;
+    day + " " + monthNames[Number(month)];
 
+  // -------------------------------
+  // ẢNH HUBBLE
+  // -------------------------------
 
-  revealMessage.textContent =
-    data.message;
+  revealImage.src =
+    data.image;
 
+  revealImage.alt =
+    data.object +
+    " - ảnh từ Kính viễn vọng Không gian Hubble";
 
-  showScreen(
-    revealScreen
-  );
+  // -------------------------------
+  // THÔNG TIN THIÊN VĂN
+  // -------------------------------
+
+  revealObject.textContent =
+    data.object;
+
+  revealScience.textContent =
+    data.science;
+
+  revealCredit.textContent =
+    "Ảnh: " + data.credit;
+
+  // -------------------------------
+  // LỜI CHÚC
+  // HIỆN TẠI CHƯA CÓ
+  // -------------------------------
+
+  revealWishSection.style.display =
+    "none";
+
+  revealWish.textContent =
+    "";
+
+  // -------------------------------
+  // HIỆN MÀN HÌNH
+  // -------------------------------
+
+  showScreen(revealScreen);
 
 }
 
