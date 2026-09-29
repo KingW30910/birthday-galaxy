@@ -431,7 +431,7 @@ function checkNearbyStars() {
 
     const distance = Math.sqrt(dx * dx + dy * dy);
 
-    if (distance < 6) {
+    if (distance < 2.2) {
       triggerSignal(star);
     }
 
@@ -479,46 +479,45 @@ closeSignal.addEventListener("click", function() {
 // ===============================
 // KIỂM TRA TÍN HIỆU
 // ===============================
+function checkNearbyStars() {
 
-checkSignal.addEventListener("click", function() {
+  birthdayStars.forEach(function(star) {
 
-  const star = player.currentSignal;
+    // Sao này đã được kiểm tra rồi → bỏ qua hoàn toàn
+    if (star.dataset.checked === "true") {
+      return;
+    }
 
-  if (!star) {
-    return;
-  }
+    const starX = parseFloat(star.style.left);
+    const starY = parseFloat(star.style.top);
 
-  const starDate = star.dataset.date;
+    const dx = player.x - starX;
+    const dy = player.y - starY;
 
-  const matchedMember = MEMBERS.find(function(member) {
-    return member.code === player.code && member.date === player.date;
-  });
+    const distance = Math.sqrt(dx * dx + dy * dy);
 
-  if (matchedMember && starDate === player.date) {
+    // Chỉ khi thật sự chạm rất gần sao
+    if (distance < 2.2) {
+      triggerSignal(star);
+} else {
 
-    star.dataset.found = "true";
-    star.classList.add("found");
+  signalTitle.textContent = "Tín hiệu không dành cho bạn";
 
-    player.unlocked = true;
+  signalMessage.textContent =
+    "Điểm sáng này không thuộc về hành trình của bạn. Bạn đã kiểm tra điểm này rồi.";
 
-    signalModal.classList.remove("active");
+  checkSignal.style.display = "none";
 
-    setTimeout(function() {
-      showReveal(starDate);
-    }, 500);
+  // Đánh dấu sao đã được kiểm tra
+  star.dataset.checked = "true";
 
-  } else {
+  // Biến sao thành dấu hiệu đã khảo sát
+  star.classList.add("checked");
 
-    signalTitle.textContent = "Tín hiệu không dành cho bạn";
+  // Đổi nội dung thành dấu X
+  star.textContent = "×";
 
-    signalMessage.textContent =
-      "Bạn đã đến rất gần một điểm sáng, nhưng tín hiệu này không thuộc về hành trình của bạn. Hãy tiếp tục khám phá.";
-
-    checkSignal.style.display = "none";
-
-  }
-
-});
+}
 
 
 // ===============================
