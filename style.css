@@ -283,38 +283,168 @@ button {
 
 /* Earth */
 
+/* =====================================================
+   EARTH — TRÁI ĐẤT NHÌN TỪ KHÔNG GIAN
+   ===================================================== */
+
 .earth {
   position: absolute;
+
   left: 8%;
   bottom: 10%;
-  width: 120px;
-  height: 120px;
+
+  width: 150px;
+  height: 150px;
+
+  border-radius: 50%;
+
+  /* Đại dương + lục địa + vùng sáng */
+  background:
+    /* Mảng lục địa 1 */
+    radial-gradient(
+      ellipse 38% 22% at 28% 38%,
+      rgba(75, 150, 95, 0.95) 0%,
+      rgba(45, 110, 75, 0.88) 38%,
+      transparent 70%
+    ),
+
+    /* Mảng lục địa 2 */
+    radial-gradient(
+      ellipse 32% 45% at 62% 54%,
+      rgba(75, 145, 90, 0.9) 0%,
+      rgba(35, 100, 70, 0.78) 42%,
+      transparent 72%
+    ),
+
+    /* Mảng lục địa 3 */
+    radial-gradient(
+      ellipse 22% 17% at 72% 25%,
+      rgba(110, 165, 105, 0.85) 0%,
+      rgba(50, 110, 75, 0.7) 48%,
+      transparent 75%
+    ),
+
+    /* Màu đại dương */
+    radial-gradient(
+      circle at 38% 32%,
+      #3f9dcc 0%,
+      #176da8 35%,
+      #0b447d 65%,
+      #041b3b 100%
+    );
+
+  /* Tạo độ cong + vùng tối phía bên phải */
+  box-shadow:
+    inset -18px -12px 30px rgba(0, 0, 0, 0.72),
+    inset 10px 8px 22px rgba(120, 210, 255, 0.18),
+
+    /* Khí quyển */
+    0 0 8px rgba(120, 205, 255, 0.75),
+    0 0 24px rgba(70, 160, 255, 0.38),
+    0 0 55px rgba(50, 110, 255, 0.18);
+
+  overflow: hidden;
+
+  animation: earthFloat 5s ease-in-out infinite;
+
+  z-index: 5;
+}
+
+
+/* =====================================================
+   ÁNH SÁNG KHÍ QUYỂN
+   ===================================================== */
+
+.earth::before {
+  content: "";
+
+  position: absolute;
+
+  inset: -3px;
+
   border-radius: 50%;
 
   background:
     radial-gradient(
-      circle at 35% 30%,
-      #d8f4ff 0%,
-      #3e91cf 28%,
-      #174e91 55%,
-      #07152e 100%
+      ellipse at 30% 24%,
+      rgba(255, 255, 255, 0.42) 0%,
+      rgba(180, 230, 255, 0.16) 22%,
+      transparent 48%
     );
 
-  box-shadow:
-    0 0 25px rgba(80,160,255,0.4),
-    0 0 70px rgba(50,100,255,0.2);
+  pointer-events: none;
 
-  animation: earthFloat 5s ease-in-out infinite;
+  mix-blend-mode: screen;
 }
 
+
+/* =====================================================
+   MÂY TRÊN TRÁI ĐẤT
+   ===================================================== */
+
+.earth::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 4px;
+
+  border-radius: 50%;
+
+  background:
+
+    /* Mây 1 */
+    radial-gradient(
+      ellipse 34% 7% at 30% 27%,
+      rgba(255,255,255,0.72),
+      transparent 70%
+    ),
+
+    /* Mây 2 */
+    radial-gradient(
+      ellipse 42% 8% at 62% 38%,
+      rgba(255,255,255,0.58),
+      transparent 70%
+    ),
+
+    /* Mây 3 */
+    radial-gradient(
+      ellipse 30% 6% at 45% 65%,
+      rgba(255,255,255,0.48),
+      transparent 72%
+    ),
+
+    /* Mây 4 */
+    radial-gradient(
+      ellipse 22% 5% at 75% 70%,
+      rgba(255,255,255,0.42),
+      transparent 70%
+    );
+
+  opacity: 0.75;
+
+  filter: blur(1.2px);
+
+  pointer-events: none;
+
+  mix-blend-mode: screen;
+}
+
+
+/* =====================================================
+   TRÔI NHẸ
+   ===================================================== */
+
 @keyframes earthFloat {
+
   0%, 100% {
-    transform: translateY(0);
+    transform: translateY(0) rotate(0deg);
   }
 
   50% {
-    transform: translateY(-10px);
+    transform: translateY(-8px) rotate(0.5deg);
   }
+
 }
 
 /* Birthday stars */
@@ -519,9 +649,11 @@ button {
     font-size: 34px;
   }
 
-  .earth {
-    width: 80px;
-    height: 80px;
+  .earth { 
+    width: 95px;
+    height: 95px;
+    left: 6%;
+    bottom: 8%;
   }
 
   .game-hud {
