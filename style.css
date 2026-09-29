@@ -548,8 +548,13 @@ button {
   width: 100%;
 }
 
-.birthday-select select {
+.birthday-field {
   flex: 1;
+}
+
+.birthday-field input {
+  width: 100%;
+  box-sizing: border-box;
   padding: 14px 16px;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.18);
@@ -559,11 +564,10 @@ button {
   outline: none;
 }
 
-.birthday-select select:focus {
-  border-color: rgba(255, 255, 255, 0.5);
+.birthday-field input::placeholder {
+  color: rgba(255, 255, 255, 0.55);
 }
 
-.birthday-select option {
-  color: #111;
-  background: white;
+.birthday-field input:focus {
+  border-color: rgba(255, 255, 255, 0.5);
 }
