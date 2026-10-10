@@ -1351,11 +1351,20 @@ function showReveal(date) {
     "Ảnh: " + data.credit;
 
   // Hiện tại chưa có lời chúc
-  revealWishSection.style.display =
-    "none";
 
-  revealWish.textContent =
-    "";
+  // Hiển thị lời chúc của đúng thành viên
+  const wish = birthdayWishes[player.code];
+
+  if (wish) {
+    revealWish.textContent =
+      wish.title + "\n\n" + wish.message;
+
+    revealWishSection.style.display = "block";
+  } else {
+    revealWishSection.style.display = "none";
+    revealWish.textContent = "";
+    console.warn("Chưa tìm thấy lời chúc cho:", player.code);
+  }
 
   // =================================
   // CHUYỂN CẢNH
