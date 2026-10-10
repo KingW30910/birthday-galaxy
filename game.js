@@ -684,60 +684,6 @@ function updatePlayerPosition() {
 // ===============================
 
 const keys = {};
-/* NHẬN LỆNH DI CHUYỂN TỪ NÚT CẢM ỨNG */
-const touchDirections = {
-  up: "arrowup",
-  down: "arrowdown",
-  left: "arrowleft",
-  right: "arrowright"
-};
-
-document.querySelectorAll(".move-btn").forEach(function(button) {
-  const direction = touchDirections[button.dataset.move];
-  if (!direction) return;
-
-  function startMove(event) {
-    event.preventDefault();
-    keys[direction] = true;
-
-    if (button.setPointerCapture && event.pointerId !== undefined) {
-      try {
-        button.setPointerCapture(event.pointerId);
-      } catch (_) {}
-    }
-  }
-
-  function stopMove(event) {
-    keys[direction] = false;
-
-    if (
-      event &&
-      button.hasPointerCapture &&
-      event.pointerId !== undefined
-    ) {
-      try {
-        if (button.hasPointerCapture(event.pointerId)) {
-          button.releasePointerCapture(event.pointerId);
-        }
-      } catch (_) {}
-    }
-  }
-
-  button.addEventListener("pointerdown", startMove);
-  button.addEventListener("pointerup", stopMove);
-  button.addEventListener("pointercancel", stopMove);
-  button.addEventListener("lostpointercapture", stopMove);
-  button.addEventListener("contextmenu", function(event) {
-    event.preventDefault();
-  });
-});
-
-/* Tránh nhân vật tiếp tục di chuyển khi người chơi rời trang */
-window.addEventListener("blur", function() {
-  Object.keys(keys).forEach(function(key) {
-    keys[key] = false;
-  });
-});
 
 
 // Nhấn phím
@@ -771,6 +717,67 @@ window.addEventListener("keyup", function(event) {
 
 });
 
+
+/* ĐIỀU KHIỂN CẢM ỨNG - BẢN SỬA */
+(function enableTouchControls() {
+  const controls = document.getElementById("touchControls");
+  if (!controls) {
+    console.error("Không tìm thấy #touchControls trong HTML");
+    return;
+  }
+
+  const directions = {
+    up: "arrowup",
+    down: "arrowdown",
+    left: "arrowleft",
+    right: "arrowright"
+  };
+
+  controls.querySelectorAll(".move-btn").forEach(function(button) {
+    const key = directions[button.dataset.move];
+    if (!key) return;
+
+    const release = function() {
+      keys[key] = false;
+      button.classList.remove("pressed");
+    };
+
+    button.addEventListener("pointerdown", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      keys[key] = true;
+      button.classList.add("pressed");
+
+      try {
+        button.setPointerCapture(event.pointerId);
+      } catch (error) {
+        // Vẫn tiếp tục hoạt động nếu trình duyệt không hỗ trợ capture.
+      }
+    });
+
+    button.addEventListener("pointerup", release);
+    button.addEventListener("pointercancel", release);
+    button.addEventListener("lostpointercapture", release);
+    button.addEventListener("contextmenu", function(event) {
+      event.preventDefault();
+    });
+  });
+
+  window.addEventListener("blur", function() {
+    Object.values(directions).forEach(function(key) {
+      keys[key] = false;
+    });
+  });
+
+  document.addEventListener("visibilitychange", function() {
+    if (document.hidden) {
+      Object.values(directions).forEach(function(key) {
+        keys[key] = false;
+      });
+    }
+  });
+})();
 
 
 // ===============================
