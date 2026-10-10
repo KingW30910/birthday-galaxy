@@ -281,6 +281,22 @@ const birthdayWishes = {
     message: "Chúc bạn tuổi mới có thêm những cơ hội để làm điều mình mong muốn, những người để cùng chia sẻ niềm vui và những khoảng lặng để hiểu mình hơn. Mong dù có đi qua bao nhiêu chặng đường, bạn vẫn giữ được một chút háo hức với tương lai và luôn tìm thấy lý do để tiếp tục tiến về phía trước. 🚀"
   }
 };
+
+function showBirthdayWish(memberCode) {
+  const wish = birthdayWishes[memberCode];
+
+  const wishSection = document.getElementById("revealWishSection");
+  const wishText = document.getElementById("revealWish");
+
+  if (!wish || !wishSection || !wishText) {
+    console.warn("Chưa tìm thấy lời chúc:", memberCode);
+    return;
+  }
+
+  wishText.textContent = `${wish.title}\n\n${wish.message}`;
+  wishSection.style.display = "block";
+}
+
 // ===============================
 // TRẠNG THÁI NGƯỜI CHƠI
 // ===============================
