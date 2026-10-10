@@ -190,7 +190,99 @@ const STAR_DATA = {
 
 };
 
+```javascript
+const birthdayWishes = {
+  "VTN": {
+    date: "02/09",
+    title: "Một ngôi sao bền bỉ",
+    message: "Chúc bạn tuổi mới luôn có đủ bình yên để tận hưởng những điều giản dị, đủ vững vàng để đi qua những ngày nhiều thử thách và đủ dịu dàng với chính mình trên hành trình trưởng thành. Mong rằng dù vũ trụ có rộng lớn đến đâu, bạn vẫn luôn tìm được nơi khiến mình cảm thấy thuộc về. ✨"
+  },
 
+  "PHNH": {
+    date: "03/09",
+    title: "Những khởi đầu mới",
+    message: "Chúc bạn tuổi mới có thêm nhiều cơ hội để khám phá những điều mình chưa từng thử, gặp những người khiến mình được truyền cảm hứng và can đảm theo đuổi những điều thực sự có ý nghĩa. Mong mỗi ngày đều mở ra một chân trời mới để bạn háo hức bước tới. 🚀"
+  },
+
+  "BTNB": {
+    date: "13/09",
+    title: "Một vũ trụ của riêng mình",
+    message: "Chúc bạn luôn giữ được những điều khiến mình trở nên đặc biệt, không cần phải giống bất kỳ vì sao nào khác để tỏa sáng. Mong tuổi mới mang đến cho bạn những niềm vui bất ngờ, những kết nối chân thành và thật nhiều khoảnh khắc mà sau này nhớ lại, bạn vẫn mỉm cười. 💜"
+  },
+
+  "ĐTTH": {
+    date: "05/09",
+    title: "Ánh sáng dịu dàng",
+    message: "Chúc bạn tuổi mới không chỉ có những ngày rực rỡ mà còn có cả những ngày bình thường thật dễ chịu. Mong bạn luôn gặp được sự tử tế khi cần, có người đồng hành khi mỏi mệt và luôn nhớ rằng mình xứng đáng được quan tâm, kể cả trong những lúc chẳng cần phải làm điều gì thật lớn lao. 🌟"
+  },
+
+  "NNHT": {
+    date: "25/09",
+    title: "Hành trình của riêng bạn",
+    message: "Chúc bạn có một tuổi mới với nhiều trải nghiệm đáng nhớ và những bước tiến khiến bản thân tự hào. Đường đi không nhất thiết phải thẳng, và tốc độ cũng chẳng cần giống ai. Mong bạn luôn đủ kiên nhẫn để đi theo nhịp của mình, bởi mỗi hành trình đều có một vẻ đẹp riêng. 🌌"
+  },
+
+  "NTTV": {
+    date: "16/10",
+    title: "Những điều đang lớn lên",
+    message: "Chúc bạn tuổi mới có thêm nhiều điều để mong đợi, nhiều trải nghiệm để học hỏi và nhiều lý do để tin vào những lựa chọn của mình. Mong bạn không quá khắt khe với những điều chưa hoàn hảo, bởi đôi khi, chính những bước đi còn vụng về lại đưa chúng ta đến những nơi thật đẹp. 🪐"
+  },
+
+  "NTTH": {
+    date: "11/10",
+    title: "Một khoảng trời bình yên",
+    message: "Chúc bạn có một năm mới của cuộc đời với thật nhiều niềm vui nhỏ bé nhưng chân thành. Mong những ngày bận rộn vẫn có khoảng nghỉ dành cho bản thân, những lúc chông chênh vẫn có điều để bám vào và những ngày vui luôn có người để sẻ chia. Bình yên cũng là một điều rất đáng để chúc mừng. 🌷"
+  },
+
+  "TTH": {
+    date: "20/10",
+    title: "Tỏa sáng theo cách của mình",
+    message: "Chúc bạn tuổi mới có đủ can đảm để bắt đầu, đủ kiên trì để tiếp tục và đủ bao dung để cho phép mình đôi lúc dừng lại. Mong bạn không chỉ tự hào về những gì mình đạt được, mà còn trân trọng cả con người mình đang trở thành trên suốt hành trình ấy. ✨"
+  },
+
+  "NMT": {
+    date: "31/10",
+    title: "Một cái kết, một khởi đầu",
+    message: "Sinh nhật vào ngày cuối cùng của tháng cũng thật đặc biệt — như một dấu chấm nhỏ để khép lại một chương và mở ra chương mới. Chúc bạn tuổi mới có thể nhẹ nhàng đặt xuống những điều đã cũ, mang theo những bài học đáng quý và đón chờ những bất ngờ đẹp đẽ đang ở phía trước. 🎂"
+  },
+
+  "TTL": {
+    date: "09/10",
+    title: "Những kết nối trong vũ trụ",
+    message: "Chúc bạn tuổi mới gặp thêm những người khiến cuộc sống trở nên phong phú hơn, có những cuộc trò chuyện giúp mình hiểu thêm về thế giới và có những mối quan hệ mà ở đó, bạn được là chính mình. Mong những điều tốt đẹp bạn trao đi cũng tìm được đường quay trở lại với bạn. 💫"
+  },
+
+  "PHL": {
+    date: "10/10",
+    title: "Niềm vui từ những điều nhỏ",
+    message: "Chúc bạn có một tuổi mới với nhiều tiếng cười, những ngày làm việc và học tập thật đáng giá, cùng những khoảnh khắc giản dị đủ sức làm lòng mình nhẹ lại. Mong hạnh phúc không chỉ nằm ở những cột mốc lớn, mà còn hiện diện trong một ngày bình thường mà bạn cảm thấy thật sự vui. ☀️"
+  },
+
+  "NTC": {
+    date: "10/10",
+    title: "Dành chỗ cho những bất ngờ",
+    message: "Chúc bạn tuổi mới có thêm nhiều câu chuyện hay để kể, nhiều điều mới mẻ để khám phá và nhiều khoảnh khắc khiến mình thầm nghĩ: May mà mình đã thử. Mong bạn luôn giữ được sự tò mò trước cuộc sống và niềm tin rằng phía trước vẫn còn rất nhiều điều tốt đẹp chưa được nhìn thấy. 🌠"
+  },
+
+  "PTH": {
+    date: "18/10",
+    title: "Được là chính mình",
+    message: "Chúc bạn tuổi mới có thêm tự do để lựa chọn điều mình yêu thích, đủ tự tin để nói lên điều mình tin tưởng và đủ dịu dàng để lắng nghe những nhu cầu của bản thân. Mong bạn không phải thu nhỏ mình để vừa vặn với mọi nơi, mà có thể tìm thấy những không gian nơi mình được đón nhận trọn vẹn. 💗"
+  },
+
+  "NTTT": {
+    date: "18/10",
+    title: "Một năm đáng nhớ",
+    message: "Chúc bạn có một tuổi mới nhiều trải nghiệm khiến mình trưởng thành, nhiều cơ hội để khám phá những khả năng còn chưa nhận ra và nhiều người đồng hành đáng quý. Mong một ngày nhìn lại, bạn sẽ thấy mình không cần có một năm hoàn hảo — chỉ cần một năm đã sống thật lòng và có những điều đáng nhớ. 🌌"
+  },
+
+  "BTG": {
+    date: "20/10",
+    title: "Một vùng trời đầy hy vọng",
+    message: "Chúc bạn tuổi mới có thêm những cơ hội để làm điều mình mong muốn, những người để cùng chia sẻ niềm vui và những khoảng lặng để hiểu mình hơn. Mong dù có đi qua bao nhiêu chặng đường, bạn vẫn giữ được một chút háo hức với tương lai và luôn tìm thấy lý do để tiếp tục tiến về phía trước. 🚀"
+  }
+};
+```
 // ===============================
 // TRẠNG THÁI NGƯỜI CHƠI
 // ===============================
