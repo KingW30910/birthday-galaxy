@@ -2276,6 +2276,7 @@ button {
 }
 
 #revealWishSection {
+  display: block;
   margin-top: 24px;
 }
 
