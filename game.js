@@ -190,7 +190,6 @@ const STAR_DATA = {
 
 };
 
-```javascript
 const birthdayWishes = {
   "VTN": {
     date: "02/09",
@@ -282,7 +281,6 @@ const birthdayWishes = {
     message: "Chúc bạn tuổi mới có thêm những cơ hội để làm điều mình mong muốn, những người để cùng chia sẻ niềm vui và những khoảng lặng để hiểu mình hơn. Mong dù có đi qua bao nhiêu chặng đường, bạn vẫn giữ được một chút háo hức với tương lai và luôn tìm thấy lý do để tiếp tục tiến về phía trước. 🚀"
   }
 };
-```
 // ===============================
 // TRẠNG THÁI NGƯỜI CHƠI
 // ===============================
