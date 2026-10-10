@@ -2277,3 +2277,18 @@ button {
 #revealWish {
   white-space: pre-line;
 }
+
+#revealWishSection {
+  margin-top: 24px;
+}
+
+#revealWish {
+  white-space: pre-line;
+  line-height: 1.8;
+  overflow-wrap: anywhere;
+}
+
+#revealWishSection .reveal-label {
+  margin-bottom: 12px;
+}
+
