@@ -2187,7 +2187,7 @@ button {
   left: auto;
 
   /* Nâng cụm nút lên cao hơn */
-  bottom: max(75px, calc(env(safe-area-inset-bottom) + 65px));
+  bottom: max(90px, calc(env(safe-area-inset-bottom) + 65px));
 
   width: 148px;
   height: 148px;
