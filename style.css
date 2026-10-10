@@ -2175,18 +2175,27 @@ button {
 }
 
 
+```css
 /* ĐIỀU KHIỂN PHI HÀNH GIA TRÊN ĐIỆN THOẠI */
 .touch-controls {
   display: none;
   position: absolute;
   z-index: 60;
-  left: 18px;
-  bottom: max(22px, env(safe-area-inset-bottom));
+
+  /* Chuyển cụm nút sang góc phải */
+  right: 18px;
+  left: auto;
+
+  /* Nâng cụm nút lên cao hơn */
+  bottom: max(75px, calc(env(safe-area-inset-bottom) + 65px));
+
   width: 148px;
   height: 148px;
+
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
   gap: 5px;
+
   pointer-events: none;
 }
 
@@ -2249,8 +2258,12 @@ button {
 
 @media (max-width: 600px) {
   .touch-controls {
-    left: 14px;
-    bottom: max(18px, env(safe-area-inset-bottom));
+    right: 14px;
+    left: auto;
+
+    /* Điều chỉnh riêng cho màn hình điện thoại */
+    bottom: max(65px, calc(env(safe-area-inset-bottom) + 55px));
+
     width: 140px;
     height: 140px;
     gap: 4px;
