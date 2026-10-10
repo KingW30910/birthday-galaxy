@@ -718,6 +718,61 @@ window.addEventListener("keyup", function(event) {
 });
 
 
+/* NHẬN LỆNH DI CHUYỂN TỪ NÚT CẢM ỨNG */
+const touchDirections = {
+  up: "arrowup",
+  down: "arrowdown",
+  left: "arrowleft",
+  right: "arrowright"
+};
+
+document.querySelectorAll(".move-btn").forEach(function(button) {
+  const direction = touchDirections[button.dataset.move];
+  if (!direction) return;
+
+  function startMove(event) {
+    event.preventDefault();
+    keys[direction] = true;
+
+    if (button.setPointerCapture && event.pointerId !== undefined) {
+      try {
+        button.setPointerCapture(event.pointerId);
+      } catch (_) {}
+    }
+  }
+
+  function stopMove(event) {
+    keys[direction] = false;
+
+    if (
+      event &&
+      button.hasPointerCapture &&
+      event.pointerId !== undefined
+    ) {
+      try {
+        if (button.hasPointerCapture(event.pointerId)) {
+          button.releasePointerCapture(event.pointerId);
+        }
+      } catch (_) {}
+    }
+  }
+
+  button.addEventListener("pointerdown", startMove);
+  button.addEventListener("pointerup", stopMove);
+  button.addEventListener("pointercancel", stopMove);
+  button.addEventListener("lostpointercapture", stopMove);
+  button.addEventListener("contextmenu", function(event) {
+    event.preventDefault();
+  });
+});
+
+/* Tránh nhân vật tiếp tục di chuyển khi người chơi rời trang */
+window.addEventListener("blur", function() {
+  Object.keys(keys).forEach(function(key) {
+    keys[key] = false;
+  });
+});
+
 // ===============================
 // VÒNG LẶP GAME
 // ===============================
