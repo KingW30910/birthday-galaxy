@@ -684,40 +684,6 @@ function updatePlayerPosition() {
 // ===============================
 
 const keys = {};
-
-
-// Nhấn phím
-
-window.addEventListener("keydown", function(event) {
-
-  keys[event.key.toLowerCase()] =
-    true;
-
-
-  if (
-    event.key === "ArrowUp" ||
-    event.key === "ArrowDown" ||
-    event.key === "ArrowLeft" ||
-    event.key === "ArrowRight"
-  ) {
-
-    event.preventDefault();
-
-  }
-
-});
-
-
-// Nhả phím
-
-window.addEventListener("keyup", function(event) {
-
-  keys[event.key.toLowerCase()] =
-    false;
-
-});
-
-
 /* NHẬN LỆNH DI CHUYỂN TỪ NÚT CẢM ỨNG */
 const touchDirections = {
   up: "arrowup",
@@ -772,6 +738,40 @@ window.addEventListener("blur", function() {
     keys[key] = false;
   });
 });
+
+
+// Nhấn phím
+
+window.addEventListener("keydown", function(event) {
+
+  keys[event.key.toLowerCase()] =
+    true;
+
+
+  if (
+    event.key === "ArrowUp" ||
+    event.key === "ArrowDown" ||
+    event.key === "ArrowLeft" ||
+    event.key === "ArrowRight"
+  ) {
+
+    event.preventDefault();
+
+  }
+
+});
+
+
+// Nhả phím
+
+window.addEventListener("keyup", function(event) {
+
+  keys[event.key.toLowerCase()] =
+    false;
+
+});
+
+
 
 // ===============================
 // VÒNG LẶP GAME
