@@ -1352,20 +1352,40 @@ function showReveal(date) {
 
 
 
+  
   // HIỂN THỊ LỜI CHÚC CÁ NHÂN
   const wish = birthdayWishes[player.code];
 
-  console.log("Mã người chơi:", player.code);
-  console.log("Lời chúc tìm được:", wish);
-  console.log("Khu vực lời chúc:", revealWishSection);
-
-  if (wish && revealWishSection && revealWish) {
-    revealWish.textContent = wish.title + "\n\n" + wish.message;
+  // Kiểm tra lời chúc có đúng mã và ngày sinh không
+  if (
+    wish &&
+    wish.date === player.date &&
+    date === player.date &&
+    revealWishSection &&
+    revealWish
+  ) {
+    revealWish.textContent = `${wish.title}\n\n${wish.message}`;
     revealWishSection.style.display = "block";
+    revealWishSection.hidden = false;
+
+    console.log("Mã người chơi:", player.code);
+    console.log("Lời chúc đã hiển thị:", wish.title);
   } else {
-    console.error("Không thể hiển thị lời chúc cá nhân.");
-    revealWishSection.style.display = "none";
+    if (revealWishSection) {
+      revealWishSection.style.display = "none";
+      revealWishSection.hidden = true;
+    }
+
+    console.error("Không thể hiển thị lời chúc cá nhân.", {
+      playerCode: player.code,
+      playerDate: player.date,
+      revealDate: date,
+      wishFound: Boolean(wish),
+      wishSectionFound: Boolean(revealWishSection),
+      wishTextFound: Boolean(revealWish)
+    });
   }
+
 
   // =================================
   // CHUYỂN CẢNH
