@@ -1292,28 +1292,21 @@ checkSignal.addEventListener("click", function() {
 // ===============================
 
 function showReveal(date) {
-
   const data = STAR_DATA[date];
 
   if (!data) {
+    console.error("Không tìm thấy dữ liệu thiên văn cho ngày:", date);
     return;
   }
 
-  // =================================
-  // CHUẨN BỊ NỘI DUNG REVEAL
-  // =================================
+  // 1. Hiển thị thông tin thiên văn
+  if (revealTitle) {
+    revealTitle.textContent = data.title;
+  }
 
-  revealTitle.textContent =
-    data.title;
-
-  const dateParts =
-    date.split("/");
-
-  const day =
-    dateParts[0];
-
-  const month =
-    dateParts[1];
+  const dateParts = date.split("/");
+  const day = dateParts[0];
+  const month = dateParts[1];
 
   const monthNames = [
     "",
@@ -1331,32 +1324,37 @@ function showReveal(date) {
     "THÁNG MƯỜI HAI"
   ];
 
-  revealDate.textContent =
-    day + " " + monthNames[Number(month)];
+  if (revealDate) {
+    revealDate.textContent =
+      day + " " + monthNames[Number(month)];
+  }
 
-  revealImage.src =
-    data.image;
+  if (revealImage) {
+    revealImage.src = data.image;
+    revealImage.alt = data.object + " — ảnh thiên văn từ Hubble";
+  }
 
-  revealImage.alt =
-    data.object +
-    " — ảnh thiên văn từ Hubble";
+  if (revealObject) {
+    revealObject.textContent = data.object;
+  }
 
-  revealObject.textContent =
-    data.object;
+  if (revealScience) {
+    revealScience.textContent = data.science;
+  }
 
-  revealScience.textContent =
-    data.science;
+  if (revealCredit) {
+    revealCredit.textContent = "Ảnh: " + data.credit;
+  }
 
-  revealCredit.textContent =
-    "Ảnh: " + data.credit;
-
-
-
-  
-  // HIỂN THỊ LỜI CHÚC CÁ NHÂN
+  // 2. Tìm lời chúc theo mã thành viên
   const wish = birthdayWishes[player.code];
 
-  // Kiểm tra lời chúc có đúng mã và ngày sinh không
+  console.log("Mã người chơi:", player.code);
+  console.log("Ngày sinh người chơi:", player.date);
+  console.log("Ngày ngôi sao được mở:", date);
+  console.log("Lời chúc tìm được:", wish);
+
+  // 3. Hiển thị lời chúc nếu mã và ngày sinh đều khớp
   if (
     wish &&
     wish.date === player.date &&
@@ -1364,12 +1362,16 @@ function showReveal(date) {
     revealWishSection &&
     revealWish
   ) {
-    revealWish.textContent = `${wish.title}\n\n${wish.message}`;
-    revealWishSection.style.display = "block";
-    revealWishSection.hidden = false;
+    revealWish.textContent =
+      wish.title + "\n\n" + wish.message;
 
-    console.log("Mã người chơi:", player.code);
-    console.log("Lời chúc đã hiển thị:", wish.title);
+    revealWish.style.whiteSpace = "pre-line";
+
+    revealWishSection.hidden = false;
+    revealWishSection.style.display = "block";
+    revealWishSection.style.visibility = "visible";
+
+    console.log("Đã hiển thị lời chúc cá nhân.");
   } else {
     if (revealWishSection) {
       revealWishSection.style.display = "none";
@@ -1377,59 +1379,37 @@ function showReveal(date) {
     }
 
     console.error("Không thể hiển thị lời chúc cá nhân.", {
-      playerCode: player.code,
+      code: player.code,
       playerDate: player.date,
-      revealDate: date,
+      starDate: date,
       wishFound: Boolean(wish),
-      wishSectionFound: Boolean(revealWishSection),
-      wishTextFound: Boolean(revealWish)
+      sectionFound: Boolean(revealWishSection),
+      textFound: Boolean(revealWish)
     });
   }
 
+  // 4. Chạy hiệu ứng chuyển cảnh
+  if (revealTransition) {
+    revealTransition.classList.remove("leaving");
+    revealTransition.classList.add("active");
+  }
 
-  // =================================
-  // CHUYỂN CẢNH
-  // =================================
-
-  revealTransition.classList.remove(
-    "leaving"
-  );
-
-  revealTransition.classList.add(
-    "active"
-  );
-
-  // Chờ ánh sáng mở ra
-  setTimeout(function() {
-
-    showScreen(
-      revealScreen
-    );
-
+  setTimeout(function () {
+    showScreen(revealScreen);
   }, 420);
 
-  // Cho Reveal xuất hiện phía sau
-  setTimeout(function() {
-
-    revealTransition.classList.add(
-      "leaving"
-    );
-
+  setTimeout(function () {
+    if (revealTransition) {
+      revealTransition.classList.add("leaving");
+    }
   }, 1050);
 
-  // Dọn lớp chuyển cảnh
-  setTimeout(function() {
-
-    revealTransition.classList.remove(
-      "active"
-    );
-
-    revealTransition.classList.remove(
-      "leaving"
-    );
-
+  setTimeout(function () {
+    if (revealTransition) {
+      revealTransition.classList.remove("active");
+      revealTransition.classList.remove("leaving");
+    }
   }, 1700);
-
 }
 
 // ===============================
